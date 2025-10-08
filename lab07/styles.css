@@ -1,0 +1,36 @@
+body {
+    background-color: #00171F;   /* body background */
+    color: #FFFFFF;              /* text color */
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0; /* removes default browser margin */
+  }
+  
+  h1, h2, h3 {
+    color: #FFFFFF;              /* heading color */
+  }
+  
+  a {
+    color: #00A8E8;              /* link color */
+    text-decoration: none;
+  }
+  
+  /* Nav styles */
+  nav {
+    background-color: #003459;   /* nav background */
+    padding: 10px;               /* box model: padding */
+    margin-bottom: 30px;         /* box model: margin bottom */
+  }
+  
+  /* Descendant selector: only links inside nav */
+  nav a {
+    color: #FFFFFF;              /* nav link color */
+    padding: 4px 6px;            /* small inner spacing so hover bg shows nicely */
+    border-radius: 4px;
+  }
+  
+  /* Pseudo selector with descendant: hover highlight */
+  nav a:hover {
+    background-color: #007EA7;   /* nav highlight color */
+  }
+  
