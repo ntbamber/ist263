@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Viewport Example</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 2rem;
+            color: white;
+            font-family: Arial, sans-serif;
+            background-color: blue;
+        }
+
+        .large-text {
+            display: none;
+        }
+
+        @media (min-width: 800px) {
+            body {
+                background-color: red;
+            }
+
+            .small-text {
+                display: none;
+            }
+            .large-text {
+                display: inline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span class="small-text">I'm small</span>
+        <span class="large-text">I'm large</span>
+    </div>
+</body>
+</html>
