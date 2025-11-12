@@ -35,8 +35,9 @@
     }
 
     function ShuffleShells() {
-      const shells = [1, 2, 3];
-      shells.sort(() => Math.random() - 0.5);
+      let shellOrder = [1, 2, 3].sort(function(){
+        return Math.random() - 0.5;
+      })
       document.getElementById("first").style.order  = shells[0];
       document.getElementById("second").style.order = shells[1];
       document.getElementById("third").style.order  = shells[2];
