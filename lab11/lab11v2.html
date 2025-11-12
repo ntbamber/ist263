@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 11 – Walnut Game (Messages)</title>
+  <link rel="stylesheet" href="animate2.css">
+  <style>
+    .container {
+      display: flex;
+    }
+    #first { order: 1; }
+    #second { order: 2; }
+    #third { order: 3; }
+  </style>
+</head>
+<body onload="ShuffleShells();">
+  <h1>Choose a Walnut</h1>
+
+  <div class="container">
+    <img src="walnut.png" alt="first walnut" id="first" onclick="WinnerMessage();">
+    <img src="walnut.png" alt="second walnut" id="second" onclick="TryAgain();">
+    <img src="walnut.png" alt="third walnut" id="third" onclick="TryAgain();">
+  </div>
+
+  <div id="message"></div>
+
+  <script>
+    function WinnerMessage() {
+      document.getElementById("message").innerHTML = "You Won!";
+    }
+
+    function TryAgain() {
+      document.getElementById("message").innerHTML = "Wrong Shell - Try Again!";
+    }
+
+    function ShuffleShells() {
+      const shells = [1, 2, 3];
+      shells.sort(() => Math.random() - 0.5);
+      document.getElementById("first").style.order  = shells[0];
+      document.getElementById("second").style.order = shells[1];
+      document.getElementById("third").style.order  = shells[2];
+    }
+  </script>
+</body>
+</html>
