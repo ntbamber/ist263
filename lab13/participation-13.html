@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Week 11 API Calls</title>
+    <script>
+
+      const cuseTempAPI =
+        "https://api.weather.gov/gridpoints/BGM/52,99/forecast";
+      function getSyracuseTemp() {
+        fetch(cuseTempAPI)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data);
+            time = Date(data.properties.periods[0].startTime);
+            temp = data.properties.periods[0].temperature;
+            forecast = data.properties.periods[0].detailedForecast;
+            icon = data.properties.periods[0].icon;
+            console.log(icon)
+            document.getElementById("icon").setAttribute("src", icon);
+            document.getElementById("time").innerHTML = time;
+            document.getElementById("temp").innerHTML = temp + "°F";
+            document.getElementById("forecast").innerHTML = forecast;
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+
+      function getCurrentDate() {
+        const time = new Date(); // Current date and time
+        const formattedDate = time.toLocaleDateString("en-US"); // MM/DD/YYYY format
+        document.getElementById("date").innerHTML = formattedDate;
+        console.log(formattedDate);
+      }
+
+    </script>
+    <style>
+        .container {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #f9f9f9;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        h3 {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+        }
+        button {
+            margin: 10px 0;
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        img {
+            max-width: 100px;
+        }
+        p {
+            margin: 8px 0;
+            color: #555;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Weather & Date Info</h2>
+      
+      <h3>Weather</h3>
+      <img id="icon" src="" alt="Icon showing current weather"/>
+      <p id="time"></p>
+      <p id="temp"></p>
+      <p id="forecast"></p>
+
+      <h3>Date</h3>
+      <p id="date"></p>
+      <button onclick="getSyracuseTemp()">Get Syracuse Weather</button>
+      <button onclick="getCurrentDate()">Get Today's Date</button>
+
+    </div>
+  </body>
+</html>
