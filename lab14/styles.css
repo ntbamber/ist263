@@ -1,0 +1,269 @@
+body {
+  background-color: #00171F;
+  color: #FFFFFF;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+nav {
+  background-color: #003459;
+  padding: 10px;
+}
+
+nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 5px;
+}
+
+nav a:hover {
+  background-color: #007EA7;
+  border-radius: 5px;
+}
+
+h1, h2 {
+  color: #00A8E8;
+}
+
+a {
+  color: #00A8E8;
+}
+
+a:hover {
+  color: #007EA7;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #007EA7;
+  padding: 8px;
+  text-align: left;
+}
+
+.evenrow {
+  background-color: #003459;
+}
+
+form {
+  margin-top: 20px;
+}
+
+/* -------- Lab 08 Additions -------- */
+.clear { clear: both; }
+
+.box {
+  background: #003459;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.box h2, .box h3 { color: #FFFFFF; }
+
+.page-wrap, .contact-wrapper { padding: 1rem; }
+
+.headshot-float {
+  float: right;
+  margin: 0 0 12px 16px;
+  max-width: 240px;
+  height: auto;
+}
+
+footer { margin-top: 1rem; }
+footer .copyright { float: left; }
+footer .tagline { float: right; }
+
+@media (max-width: 700px) {
+  .headshot-float { float: none; display: block; margin: 0 auto 12px; }
+  footer .copyright, footer .tagline { float: none; display: block; }
+}
+
+.img1 { float: left; margin: 0 15px 10px 0; }
+.img2 { float: right; margin: 0 0 10px 15px; }
+.img3 { float: left; margin: 0 15px 10px 0; }
+
+.part2 { display: flex; gap: 16px; }
+
+.article1 {
+  flex: 2;
+  order: 3;
+  background: #00263A;
+  border-radius: 12px;
+}
+.article1 p { padding: 0 10px 10px; }
+.article2 { flex: 1; order: 2; }
+.article3 { flex: 1; order: 1; }
+
+@media (max-width: 800px) {
+  .part2 { flex-direction: column; }
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+  flex-wrap:wrap;
+}
+.col {
+  flex: 1;
+  min-width: 0;
+}
+
+.map-box .map-frame {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+}
+.map-box iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.contact-form label { display: block; margin-top: 0.5rem; }
+.contact-form input[type="text"],
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem;
+  margin-top: 0.25rem;
+  border: 1px solid #007EA7;
+  border-radius: 8px;
+  background: #00171F;
+  color: #FFFFFF;
+}
+
+.contact-form button {
+  margin-top: 0.75rem;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #007EA7;
+  color: #FFFFFF;
+}
+
+@media (max-width: 700px) {
+  .row { flex-direction: column; }
+}
+
+/* -------- Lab 09 Additions -------- */
+.page-wrap {
+  padding: 1.25rem;
+}
+
+.page-title {
+  text-align: center;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.intro {
+  max-width: 70ch;
+  margin: 0 auto 1rem auto;
+}
+
+.legacy-table {
+  display: none;
+}
+
+.skills-layout {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.skills-main {
+  flex: 3 1 0;
+}
+
+.skills-aside {
+  flex: 1 1 0;
+  background: #003459;
+  color: #FFFFFF;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.skills-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.skill {
+  flex: 1 1 120px;
+  text-align: center;
+}
+
+.skill img {
+  width: 80px;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.5rem;
+}
+
+.skills-aside ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.1rem;
+}
+
+@media (max-width: 800px) {
+  .skills-layout {
+    flex-direction: column;
+  }
+  .intro {
+    margin-left: 0;
+    max-width: 70ch;
+  }
+}
+
+/* -------- Lab 10 Additions -------- */
+.responsive-img { 
+  max-width: 100%; 
+  height: auto; 
+}
+
+@media (max-width: 800px) {
+  nav a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+  nav .pipe { 
+    display: none; 
+  }
+}
+
+/* -------- Lab 13 Additions -------- */
+/* Accessible skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 0.5rem 0.75rem;
+  background: #00A8E8;
+  color: #00171F;
+  border-radius: 8px;
+  z-index: 1000;
+}
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+  outline: 3px solid #FFFFFF;
+}
+
+/* Strong, consistent keyboard focus */
+a:focus, button:focus, input:focus, textarea:focus {
+  outline: 3px solid #00A8E8;
+  outline-offset: 2px;
+}
+ /* Lab14 additions */
+ h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather Sans', Arial, Helvetica, sans-serif;
+}
